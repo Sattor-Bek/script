@@ -22,3 +22,18 @@ dtnow.year, dtnow.month, dtnow.day, dtnow.hour, dtnow.minute, dtnow.second # get
 time_delta = dt.timedelta(hours = 4) #Tashkent time
 result = dtnow - time_delta
 print (result)
+
+# get user info
+class Person:
+    def set_organization(self, new_organization):
+        self.organization = new_organization
+    def set_name(self, new_name):
+        self.name = new_name
+    def set_location(self, new_location):
+        self.location = new_location
+
+person = Person()
+person.name = raw_input('Please input user name:')
+person.location = raw_input('Please input your address:')
+person.organization = raw_input('Please input your organization:')
+print('Name :{} Location: {} Works at: {}'.format(person.name, person.location, person.organization))

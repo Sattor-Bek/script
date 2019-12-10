@@ -90,9 +90,20 @@ a = np.arange(36)
 a.resize((6,6))
 print (a)
 
-print(a[2,3])
-a2 = a[:3, :4]
-print (a2)
-a2[ : ] = 0
+# print(a[2,3])
+# a2 = a[:3, :4]
+# print (a2)
+# a2[1, 0:] = 0
+#
+# print (a)
 
-print (a)
+# for i in range(len(a)):
+#     print(i)
+# for i, row in enumerate(a):
+#     print 'row No.', i + 1, 'is', row
+#
+# b = a**2
+# print(b)
+#
+# for i, j in zip(a,b):
+#     print i, '+' , j, '=', i + j

@@ -32,8 +32,23 @@ class Person:
     def set_location(self, new_location):
         self.location = new_location
 
-person = Person()
-person.name = raw_input('Please input user name:')
-person.location = raw_input('Please input your address:')
-person.organization = raw_input('Please input your organization:')
-print('Name :{} Location: {} Works at: {}'.format(person.name, person.location, person.organization))
+# person = Person()
+# person.name = raw_input('Please input user name:')
+# person.location = raw_input('Please input your address:')
+# person.organization = raw_input('Please input your organization:')
+# print('Name :{} Location: {} Works at: {}'.format(person.name, person.location, person.organization))
+
+# Random id generator
+lowercase = 'abcdefghijklmnopqrstuvwxyz'
+digits = '0123456789'
+list = []
+for i in lowercase:
+    for j in lowercase:
+        for k in digits:
+            for l in digits:
+                list.append(i+j+k+l)
+
+print list
+
+# answer = [i + i + j + j for i in lowercase for str(j) in digits]
+# correct_answer == answer

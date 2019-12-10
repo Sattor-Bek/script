@@ -48,7 +48,8 @@ for i in lowercase:
             for l in digits:
                 list.append(i+j+k+l)
 
-print list
+print len(list)
+print len([i+j+k+l for i in lowercase for j in lowercase for k in digits for l in digits])
 
 # answer = [i + i + j + j for i in lowercase for str(j) in digits]
 # correct_answer == answer

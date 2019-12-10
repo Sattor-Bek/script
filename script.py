@@ -86,9 +86,9 @@ import numpy as np
 # a = np.arange(15)**5
 # print [a[1], a[4], a[0:5]]
 
-a = np.arange(36)
-a.resize((6,6))
-print (a)
+# a = np.arange(36)
+# a.resize((6,6))
+# print (a)
 
 # print(a[2,3])
 # a2 = a[:3, :4]

@@ -28,3 +28,10 @@ get_max()
 def answer_six():
      return census_df[census_df['C'] ==50].sort_values(['A', 'B'], ascending = False).groupby('A').apply(lambda d: sum(d.B[:3])).sort_values(ascending = False).index.tolist()
 answer_six()
+
+import numpy as np
+def abs_get():
+    df = census_df[census_df['A'] ==50].set_index('CTYNAME').loc[:,['POPESTIMATE2010', 'POPESTIMATE2011', 'POPESTIMATE2012', 'POPESTIMATE2013', 'POPESTIMATE2014', 'POPESTIMATE2015']]
+    df['DIF'] = np.abs(df.max(axis='columns') - df.min(axis='columns'))
+    return df['DIF'].idxmax()
+abs_get()

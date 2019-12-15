@@ -26,5 +26,5 @@ def get_max():
 get_max()
 
 def answer_six():
-     return census_df[census_df['SUMLEV'] ==50].sort_values(['STNAME', 'CENSUS2010POP'], ascending = False).groupby('STNAME').apply(lambda d: sum(d.CENSUS2010POP[:3])).sort_values(ascending = False).index.tolist()
+     return census_df[census_df['C'] ==50].sort_values(['A', 'B'], ascending = False).groupby('A').apply(lambda d: sum(d.B[:3])).sort_values(ascending = False).index.tolist()
 answer_six()

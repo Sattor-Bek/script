@@ -24,3 +24,7 @@ answer_four()
 def get_max():
     return df[df['A'] ==50]['A'].value_counts().idxmax()
 get_max()
+
+def answer_six():
+     return census_df[census_df['SUMLEV'] ==50].sort_values(['STNAME', 'CENSUS2010POP'], ascending = False).groupby('STNAME').apply(lambda d: sum(d.CENSUS2010POP[:3])).sort_values(ascending = False).index.tolist()
+answer_six()

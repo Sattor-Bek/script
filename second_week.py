@@ -21,3 +21,5 @@ df.index.names = ['Location', 'Name']
 # print(new_df)
 df = df.append(pd.Series(data = {'Item': 'iPhone', 'Cost': '50,000'}, name =('Donquijote', 'Taro')))
 print(df)
+
+print(df['Cost'].idxmax())

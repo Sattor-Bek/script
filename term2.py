@@ -38,10 +38,11 @@ def answer_eight():
     return df
 
 
-
-df = pd.DataFrame([{'Name': 'Sattor', 'Product ID': '01'},
-                   {'Name': 'Amelie', 'Product ID': '02'},
-                   {'Name': 'Poline', 'ProductProduc ID': '03'}],
-                  index=['Store 1', 'Store 1',Produc 'Store 2'])
-items = pd.DataFrame([{'Produc'}])
-df
+df = pd.DataFrame([{'Name': 'Sattor', 'Product ID': '01', 'Quantity':3},
+                   {'Name': 'Amelie', 'Product ID': '02', 'Quantity':2},
+                   {'Name': 'Poline', 'Product ID': '03', 'Quantity':10}])
+items = pd.DataFrame([{'Product ID': '01', 'Name': 'Cat food', 'Cost':2.50, 'Unit':'USD'},
+                      {'Product ID': '01', 'Name': 'Dog food', 'Cost':3.50, 'Unit':'USD'},
+                      {'Product ID': '01', 'Name': 'Bird food', 'Cost':0.50, 'Unit':'USD'},])
+pd.merge(df, items, how='outer', left_on='Product ID', right_on='Product ID')
+print (pd)

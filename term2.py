@@ -25,8 +25,9 @@ df = pd.DataFrame([{'Name': 'Sattor', 'Product ID': '01', 'Quantity':3},
                    {'Name': 'Poline', 'Product ID': '03', 'Quantity':10}])
 items = pd.DataFrame([{'Product ID': '01', 'Name': 'Cat food', 'Cost':2.50, 'Unit':'USD'},
                       {'Product ID': '02', 'Name': 'Dog food', 'Cost':3.50, 'Unit':'USD'},
-                      {'Product ID': '03', 'Name': 'Bird food', 'Cost':0.50, 'Unit':'USD'},])
-result  = pd.merge(df, items, how='outer', left_on='Product ID', right_on='Product ID')
+                      {'Product ID': '03', 'Name': 'Bird food', 'Cost':0.50, 'Unit':'USD'},
+                      {'Product ID': '04', 'Name': 'Turtle food', 'Cost':1.00, 'Unit':'USD'}])
+result  = pd.merge(df, items, how='left', left_on='Product ID', right_on='Product ID')
 result['Total'] = result['Cost'] * result['Quantity']
 
 print (result)

@@ -1,5 +1,9 @@
-import pandas as pd
+print('Start program...')
+import sys
+print(sys.version_info)
 import numpy as np
+import pandas_datareader as pdr
+
 # purchase_1 = pd.Series({'Name': 'Satoru',
 #                         'Item': 'Phone',
 #                         'Cost': '40,000'})
@@ -53,5 +57,9 @@ import numpy as np
 #
 # pd.Timestamp('9/1/2016 10:05PM')
 # # Timestamp('2016-09-01 22:05:00')
-tl = pd.Series(list('123'), [pd.Timestamp('2020-01-01'), pd.Timestamp('2020-01-02'),pd.Timestamp('2020-01-03')])
+tl = pdr.Series(list('123'), [pdr.Timestamp('2020-01-01'), pdr.Timestamp('2020-01-02'),pdr.Timestamp('2020-01-03')])
 print(tl)
+
+dates = pd.date_range('10-01-2016', periods=3, freq='2W-SUN')
+# periods = 回数
+# freq =頻度

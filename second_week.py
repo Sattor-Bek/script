@@ -47,3 +47,8 @@ print(type(df.groupby(level=0)['A'])) #<class 'pandas.core.groupby.SeriesGroupBy
 
 print(Data.pivot_table(index= ['A', 'B'], values=['C','D']))
 print(pd.pivot_table(Data, index=['A','B']))
+
+# TIMESTAMPS
+
+pd.Timestamp('9/1/2016 10:05PM')
+# Timestamp('2016-09-01 22:05:00')

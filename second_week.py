@@ -25,6 +25,25 @@ print(df)
 print(df['Cost'].idxmax())
 
 
-(df.drop(df['Quantity'] == 0)
-    .set_index(['Item'])
-    .rename(columns={'Weight': 'Weight(oz)'})
+print(df.groupby('Category').apply(lambda df,a,b: sum(df[a] * df[b]), 'Weight (oz.)', 'Quantity'))
+
+
+# Or alternatively without using a lambda:
+# def totalweight(df, w, q):
+#        return sum(df[w] * df[q])
+#
+# print(df.groupby('Category').apply(totalweight, 'Weight (oz.)', 'Quantity'))
+
+print(type(df.groupby(level=0)['A','B'])) #<class 'pandas.core.groupby.DataFrameGroupBy'>
+print(type(df.groupby(level=0)['A'])) #<class 'pandas.core.groupby.SeriesGroupBy'>
+
+
+(df.set_index('INDEX').groupby(level=0)['A','B']
+    .agg({'avg': np.average, 'sum': np.sum}))
+
+#
+(df.set_index('INDEX').groupby(level=0)['A','B']
+    .agg({'A': np.average, 'B': np.sum}))
+
+print(Data.pivot_table(index= ['A', 'B'], values=['C','D']))
+print(pd.pivot_table(Data, index=['A','B']))

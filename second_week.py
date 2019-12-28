@@ -23,3 +23,8 @@ df = df.append(pd.Series(data = {'Item': 'iPhone', 'Cost': '50,000'}, name =('Do
 print(df)
 
 print(df['Cost'].idxmax())
+
+
+(df.drop(df['Quantity'] == 0)
+    .set_index(['Item'])
+    .rename(columns={'Weight': 'Weight(oz)'})

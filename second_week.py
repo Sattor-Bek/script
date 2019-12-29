@@ -63,3 +63,23 @@ print(tl)
 dates = pd.date_range('10-01-2016', periods=3, freq='2W-SUN')
 # periods = 回数
 # freq =頻度
+
+import pandas as pd
+import numpy as np
+
+energy = pd.read_csv('energy.csv').set_index('Country').rename(index={"China2": "China", "Australia1": "Australia"})
+energy['Energy Supply'] = energy['Energy Supply'] * 1000000
+
+GDP = pd.read_csv('world_bank.csv', skiprows=range(0, 4)).set_index('Country Name').rename(index={"Korea, Rep.": "South Korea", "Iran, Islamic Rep.": "Iran", "Hong Kong SAR, China": "Hong Kong"})
+# print(GDP.head(15))
+
+scimen = pd.read_excel('scimagojr-3.xlsx')
+scimen.to_csv("'scimagojr-3.csx", sep=",")
+ScimEn = scimen.set_index('Country')
+
+merged = pd.merge(ScimEn, energy, how='outer', left_index=True, right_index=True).sort_values('Rank')
+print(merged)
+# result = pd.merge(merged, GDP, how='inner', left_index=True, right_index=True)
+
+def answer_one():
+    return "ANSWER"
